@@ -13,37 +13,27 @@ abs( -5.6): 5.6   (type: <class 'float'>)
 
 ===============
 
-all(                  []): True  (type: <class 'bool'>)
-all([True, True, True, True]): True  (type: <class 'bool'>)
-all([True, True, False, True]): False (type: <class 'bool'>)
-all([False, False, False, False]): False (type: <class 'bool'>)
-all(               set()): True  (type: <class 'bool'>)
-all(              {True}): True  (type: <class 'bool'>)
-all(       {False, True}): False (type: <class 'bool'>)
-all(             {False}): False (type: <class 'bool'>)
+all(                            []): True  (type: <class 'bool'>)
+all(      [True, True, True, True]): True  (type: <class 'bool'>)
+all(     [True, True, False, True]): False (type: <class 'bool'>)
+all(  [False, False, False, False]): False (type: <class 'bool'>)
 
 ===============
 
 
 ===============
 
-any(                  []): False (type: <class 'bool'>)
-any([True, True, True, True]): True  (type: <class 'bool'>)
-any([True, True, False, True]): True  (type: <class 'bool'>)
-any([False, False, False, False]): False (type: <class 'bool'>)
-any(               set()): False (type: <class 'bool'>)
-any(              {True}): True  (type: <class 'bool'>)
-any(       {False, True}): True  (type: <class 'bool'>)
-any(             {False}): False (type: <class 'bool'>)
+any(                            []): False (type: <class 'bool'>)
+any(      [True, True, True, True]): True  (type: <class 'bool'>)
+any(     [True, True, False, True]): True  (type: <class 'bool'>)
+any(  [False, False, False, False]): False (type: <class 'bool'>)
 
 ===============
 
-ascii(              5): 5     (type: <class 'str'>)
-ascii(            5.6): 5.6   (type: <class 'str'>)
-ascii(       'Sample'): 'Sample' (type: <class 'str'>)
-ascii('Sample\nSample'): 'Sample\nSample' (type: <class 'str'>)
-ascii(           '‚Ë‚±'): '\u306d\u3053' (type: <class 'str'>)
-ascii(      [1, 2, 3]): [1, 2, 3] (type: <class 'str'>)
+ascii(                   5): 5               (type: <class 'str'>)
+ascii(            'Sample'): 'Sample'        (type: <class 'str'>)
+ascii(                '‚Ë‚±'): '\u306d\u3053'  (type: <class 'str'>)
+ascii(           [1, 2, 3]): [1, 2, 3]       (type: <class 'str'>)
 
 ===============
 
@@ -90,8 +80,8 @@ bytes(                [1, 2, 3]): b'\x01\x02\x03'                          (type
 
 callable(                                            5): False (type: <class 'bool'>)
 callable(                      <built-in function abs>): True  (type: <class 'bool'>)
-callable(   <function sample_fn at 0x0000021DE2520400>): True  (type: <class 'bool'>)
-callable(    <function <lambda> at 0x0000021DE23804A0>): True  (type: <class 'bool'>)
+callable(   <function sample_fn at 0x0000013BD708A2A0>): True  (type: <class 'bool'>)
+callable(    <function <lambda> at 0x0000013BD6F204A0>): True  (type: <class 'bool'>)
 
 ===============
 
@@ -107,17 +97,17 @@ sample_class_1.instance_method(6)                 : 21
 
 ===============
 
-compile(    'int_1: int = 2 + 3\nprint("2 + 3: {}".format(int_1))', '', 'exec'): <code object <module> at 0x0000021DE2356450, file "", line 1>                    (type: <class 'code'>)
+compile(    'int_1: int = 2 + 3\nprint("2 + 3: {}".format(int_1))', '', 'exec'): <code object <module> at 0x0000013BD6EF6450, file "", line 1>                    (type: <class 'code'>)
 ------exec------
 2 + 3: 5
 ------eval------
 2 + 3: 5
 eval(result): None
-compile(                                                   '3 + 5', '', 'eval'): <code object <module> at 0x0000021DE23155F0, file "", line 1>                    (type: <class 'code'>)
+compile(                                                   '3 + 5', '', 'eval'): <code object <module> at 0x0000013BD6EB55F0, file "", line 1>                    (type: <class 'code'>)
 ------exec------
 ------eval------
 eval(result): 8
-compile(                                        '', 'sample_code_1.py', 'exec'): <code object <module> at 0x0000021DE2315830, file "sample_code_1.py", line 1>    (type: <class 'code'>)
+compile(                                        '', 'sample_code_1.py', 'exec'): <code object <module> at 0x0000013BD6EB59B0, file "sample_code_1.py", line 1>    (type: <class 'code'>)
 ------exec------
 ------eval------
 eval(result): None
@@ -140,7 +130,7 @@ sample_class_2 has 'val' attribute: False
 ===============
 
 dict(      [('one', 1), ('two', 2)]): {'one': 1, 'two': 2}      (type: <class 'dict'>)
-dict(          {'one': 1, 'two': 2}): {'one': 1, 'two': 2}      (type: <class 'dict'>)
+dict(                  one=1, two=2): {'one': 1, 'two': 2}      (type: <class 'dict'>)
 
 ===============
 
@@ -160,13 +150,13 @@ divmod(  3.3, 0.3):    (10.0, 0.29999999999999993) (type: <class 'tuple'>)
 
 ===============
 
-enumerate(            ['Spring', 'Summer', 'Fall', 'Winter']): <enumerate object at 0x0000021DE25044F0> (type: <class 'enumerate'>)
+enumerate(            ['Spring', 'Summer', 'Fall', 'Winter']): <enumerate object at 0x0000013BD70A4310> (type: <class 'enumerate'>)
 The return is iterable.
 item: (    0,     Spring)
 item: (    1,     Summer)
 item: (    2,       Fall)
 item: (    3,     Winter)
-enumerate(   ['Spring', 'Summer', 'Fall', 'Winter'], start=1): <enumerate object at 0x0000021DE2504400> (type: <class 'enumerate'>)
+enumerate(   ['Spring', 'Summer', 'Fall', 'Winter'], start=1): <enumerate object at 0x0000013BD70A4220> (type: <class 'enumerate'>)
 The return is iterable.
 item: (    1,     Spring)
 item: (    2,     Summer)
@@ -189,19 +179,15 @@ exec('int_1: int = x + 1\nprint("2 + 3: {}".format(int_1))'): None  (type: <clas
 exec('int_1: int = x + 1\nprint("2 + 3: {}".format(int_1))', {'x': 2}): None  (type: <class 'NoneType'>)
 2 + 3: 3
 exec('int_1: int = x + 1\nprint("2 + 3: {}".format(int_1))', {'x': 2}): None  (type: <class 'NoneType'>)
-exec(<code object <module> at 0x0000021DE2315830, file "sample_code_1.py", line 1>): None  (type: <class 'NoneType'>)
+exec(<code object <module> at 0x0000013BD6EB59B0, file "sample_code_1.py", line 1>): None  (type: <class 'NoneType'>)
 
 ===============
 
-filter(  <function <lambda> at 0x0000021DE2520AE0>, [1, 2, 3, 4, 5]): <filter object at 0x0000021DE250E620>    (type: <class 'filter'>)
+filter(  <function <lambda> at 0x0000013BD70BCB80>, [1, 2, 3, 4, 5]): <filter object at 0x0000013BD70E01F0>    (type: <class 'filter'>)
 The return is iterable.
 item:     2
 item:     4
-filter(  <function <lambda> at 0x0000021DE2520B80>, (1, 2, 3, 4, 5)): <filter object at 0x0000021DE250E410>    (type: <class 'filter'>)
-The return is iterable.
-item:     2
-item:     4
-filter(                                       None, [0, 1, 0, 2, 3]): <filter object at 0x0000021DE250E890>    (type: <class 'filter'>)
+filter(                                       None, [0, 1, 0, 2, 3]): <filter object at 0x0000013BD70CB370>    (type: <class 'filter'>)
 The return is iterable.
 item:     1
 item:     2
@@ -244,7 +230,7 @@ hasattr(   SampleClass1(1, 2), 'val_3'): False (type: <class 'bool'>)
 
 hash(         5): 5                    (type: <class 'int'>)
 hash(       5.0): 5                    (type: <class 'int'>)
-hash(  'Sample'): 1085187991068787007  (type: <class 'int'>)
+hash(  'Sample'): 7566714892484231327  (type: <class 'int'>)
 
 ===============
 
@@ -257,12 +243,12 @@ hex(    0): 0x0   (type: <class 'str'>)
 
 ===============
 
-id(   'int_1'): 140713790264232      (type: <class 'int'>)
-id(   'int_2'): 140713790264232      (type: <class 'int'>)
-id(   'int_3'): 140713790264264      (type: <class 'int'>)
-id(  'list_1'): 2327374645760        (type: <class 'int'>)
-id(  'list_2'): 2327374645760        (type: <class 'int'>)
-id(  'list_3'): 2327374645504        (type: <class 'int'>)
+id(   'int_1'): 140719384220584      (type: <class 'int'>)
+id(   'int_2'): 140719384220584      (type: <class 'int'>)
+id(   'int_3'): 140719384220616      (type: <class 'int'>)
+id(  'list_1'): 1356522900928        (type: <class 'int'>)
+id(  'list_2'): 1356522900928        (type: <class 'int'>)
+id(  'list_3'): 1356522900160        (type: <class 'int'>)
 
 ===============
 
@@ -289,17 +275,17 @@ issubclass(                      <class 'int'>, <class 'int'>): True  (type: <cl
 
 ===============
 
-iter(                                    [1, 2, 3]): <list_iterator object at 0x0000021DE2503970> (type: <class 'list_iterator'>)
+iter(                                    [1, 2, 3]): <list_iterator object at 0x0000013BD70C80D0> (type: <class 'list_iterator'>)
 The return is iterator.
 item:     1
 item:     2
 item:     3
-iter(                                    (1, 2, 3)): <tuple_iterator object at 0x0000021DE2503910> (type: <class 'tuple_iterator'>)
+iter(                                    (1, 2, 3)): <tuple_iterator object at 0x0000013BD70C82E0> (type: <class 'tuple_iterator'>)
 The return is iterator.
 item:     1
 item:     2
 item:     3
-iter(  <function iter_fn at 0x0000021DE2520AE0>, 0): <callable_iterator object at 0x0000021DE25033D0> (type: <class 'callable_iterator'>)
+iter(  <function iter_fn at 0x0000013BD70BCB80>, 0): <callable_iterator object at 0x0000013BD70C85E0> (type: <class 'callable_iterator'>)
 The return is iterator.
 item:     4
 item:     3
@@ -317,29 +303,29 @@ len(    range(0, 5)): 5     (type: <class 'int'>)
 
 list(                          (1, 2, 3)): [1, 2, 3]                                (type: <class 'list'>)
 list(                           'Sample'): ['S', 'a', 'm', 'p', 'l', 'e']           (type: <class 'list'>)
-list( <map object at 0x0000021DE25030D0>): [1, 2]                                   (type: <class 'list'>)
+list( <map object at 0x0000013BD70B3CA0>): [1, 2]                                   (type: <class 'list'>)
 
 ===============
 
 
 ===============
 
-map(                          <built-in function abs>, [1, -2, 3, -4]): <map object at 0x0000021DE2503100>  (type: <class 'map'>)
+map(                          <built-in function abs>, [1, -2, 3, -4]): <map object at 0x0000013BD70B3CD0>  (type: <class 'map'>)
 The return is iterator.
 item:     1
 item:     2
 item:     3
 item:     4
-map( <function <lambda> at 0x0000021DE2520EA0>, [1, 2, 3, 4, 5, 6, 7]): <map object at 0x0000021DE2502CB0>  (type: <class 'map'>)
+map( <function <lambda> at 0x0000013BD70BCEA0>, [1, 2, 3, 4, 5, 6, 7]): <map object at 0x0000013BD70B3280>  (type: <class 'map'>)
 The return is iterator.
-item:     0
 item:     1
 item:     0
 item:     1
 item:     0
 item:     1
 item:     0
-map(  <built-in function max>, [1, 2, 3, 4, 5, 6], [6, 5, 4, 3, 2, 1]): <map object at 0x0000021DE2500670>  (type: <class 'map'>)
+item:     1
+map(  <built-in function max>, [1, 2, 3, 4, 5, 6], [6, 5, 4, 3, 2, 1]): <map object at 0x0000013BD70B36A0>  (type: <class 'map'>)
 The return is iterator.
 item:     6
 item:     5
@@ -352,7 +338,7 @@ item:     6
 
 max(                                      [1, 2, 3, 4]): 4                              (type: <class 'int'>)
 max(       [1, -2, 3, -4], key=<built-in function abs>): -4                             (type: <class 'int'>)
-max(                                                []): max() arg is an empty sequence (type: <class 'ValueError'>)
+max(                                                []): ValueError: max() arg is an empty sequence (type: <class 'str'>)
 max(                                     [], default=0): 0                              (type: <class 'int'>)
 max(                                        2, 3, 4, 5): 5                              (type: <class 'int'>)
 
@@ -363,20 +349,20 @@ max(                                        2, 3, 4, 5): 5                      
 
 min(                                      [1, 2, 3, 4]): 1                              (type: <class 'int'>)
 min(       [1, -2, 3, -4], key=<built-in function abs>): 1                              (type: <class 'int'>)
-min(                                                []): min() arg is an empty sequence (type: <class 'ValueError'>)
+min(                                                []): ValueError: min() arg is an empty sequence (type: <class 'str'>)
 min(                                     [], default=0): 0                              (type: <class 'int'>)
 min(                                        2, 3, 4, 5): 2                              (type: <class 'int'>)
 
 ===============
 
-next(      <map object at 0x0000021DE25001F0>): 1          (type: <class 'int'>)
-next(      <map object at 0x0000021DE25001F0>): 2          (type: <class 'int'>)
-next(      <map object at 0x0000021DE25001F0>):            (type: <class 'StopIteration'>)
-next(   <map object at 0x0000021DE25001F0>, 0): 0          (type: <class 'int'>)
+next(      <map object at 0x0000013BD70AE800>): 1          (type: <class 'int'>)
+next(      <map object at 0x0000013BD70AE800>): 2          (type: <class 'int'>)
+next(      <map object at 0x0000013BD70AE800>): StopIteration:  (type: <class 'str'>)
+next(   <map object at 0x0000013BD70AE800>, 0): 0          (type: <class 'int'>)
 
 ===============
 
-object(): <object object at 0x0000021DE2364430>    (type: <class 'object'>)
+object(): <object object at 0x0000013BD6F04420>    (type: <class 'object'>)
 
 ===============
 
@@ -390,7 +376,7 @@ oct(    0): 0o0   (type: <class 'str'>)
 ===============
 
 ord(  'a'): 97         (type: <class 'int'>)
-ord(  '‚ '): 12354      (type: <class 'int'>)
+ord(  '‚Ë'): 12397      (type: <class 'int'>)
 
 ===============
 
@@ -447,12 +433,12 @@ repr( [1, 2, 3]): [1, 2, 3]  (type: <class 'str'>)
 
 ===============
 
-reversed( [1, 2, 3]): <list_reverseiterator object at 0x0000021DE250E080>     (type: <class 'list_reverseiterator'>)
+reversed( [1, 2, 3]): <list_reverseiterator object at 0x0000013BD70CADD0>     (type: <class 'list_reverseiterator'>)
 The return is iterator.
 item:     3
 item:     2
 item:     1
-reversed( (1, 2, 3)): <reversed object at 0x0000021DE250DDB0>                 (type: <class 'reversed'>)
+reversed( (1, 2, 3)): <reversed object at 0x0000013BD70CABC0>                 (type: <class 'reversed'>)
 The return is iterator.
 item:     3
 item:     2
@@ -507,9 +493,8 @@ str( [1, 2, 3]): [1, 2, 3]  (type: <class 'str'>)
 
 ===============
 
-sum(                          [1, 2, 3]): 6     (type: <class 'int'>)
-sum( <map object at 0x0000021DE25034C0>): 10    (type: <class 'int'>)
-sum(                [1, 2, 3], start=10): 16    (type: <class 'int'>)
+sum(                [1, 2, 3]): 6     (type: <class 'int'>)
+sum(      [1, 2, 3], start=10): 16    (type: <class 'int'>)
 
 ===============
 
@@ -532,13 +517,29 @@ vars(   <class 'SampleClass1'>): {'__module__': 'builtins', '__... (type: <class
 
 ===============
 
-zip(                    [1, 2, 3], [2, 3, 4]): <zip object at 0x0000021DE251BAC0>       (type: <class 'zip'>)
+zip(                    [1, 2, 3], [2, 3, 4]): <zip object at 0x0000013BD70B7B40>       (type: <class 'zip'>)
 The return is iterator.
 item: (1, 2)
 item: (2, 3)
 item: (3, 4)
-zip(         [1, 2, 3], [2, 3, 4], [3, 4, 5]): <zip object at 0x0000021DE2584700>       (type: <class 'zip'>)
+zip(                 [1, 2, 3], [2, 3, 4, 5]): <zip object at 0x0000013BD71289C0>       (type: <class 'zip'>)
+The return is iterator.
+item: (1, 2)
+item: (2, 3)
+item: (3, 4)
+zip(         [1, 2, 3], [2, 3, 4], [3, 4, 5]): <zip object at 0x0000013BD7128980>       (type: <class 'zip'>)
 The return is iterator.
 item: (1, 2, 3)
 item: (2, 3, 4)
 item: (3, 4, 5)
+zip(       [1, 2, 3], [2, 3, 4], strict=True): <zip object at 0x0000013BD7128AC0>       (type: <class 'zip'>)
+The return is iterator.
+item: (1, 2)
+item: (2, 3)
+item: (3, 4)
+zip(    [1, 2, 3], [2, 3, 4, 5], strict=True): <zip object at 0x0000013BD7128B00>       (type: <class 'zip'>)
+The return is iterator.
+item: (1, 2)
+item: (2, 3)
+item: (3, 4)
+ValueError: zip() argument 2 is longer than argument 1

@@ -63,15 +63,11 @@ args_list: list[Args] = [
     Args([]), 
     Args([True, True, True, True]), 
     Args([True, True, False, True]), 
-    Args([False, False, False, False]), 
-    Args(set()), 
-    Args({True}), 
-    Args({True, False}), 
-    Args({False})
+    Args([False, False, False, False])
 ]
 for args in args_list:
     result: bool = all(*args.args, **args.kwargs)
-    print("all({:>20}): {:<5} (type: {})".format(repr(args), str(result), type(result)))
+    print("all({:>30}): {:<5} (type: {})".format(repr(args), str(result), type(result)))
 
 print("\n{}\n".format("=" * 15))
 
@@ -83,29 +79,23 @@ args_list: list[Args] = [
     Args([]), 
     Args([True, True, True, True]), 
     Args([True, True, False, True]), 
-    Args([False, False, False, False]), 
-    Args(set()), 
-    Args({True}), 
-    Args({True, False}), 
-    Args({False})
+    Args([False, False, False, False])
 ]
 for args in args_list:
     result: bool = any(*args.args, **args.kwargs)
-    print("any({:>20}): {:<5} (type: {})".format(repr(args), str(result), type(result)))
+    print("any({:>30}): {:<5} (type: {})".format(repr(args), str(result), type(result)))
 
 print("\n{}\n".format("=" * 15))
 
 args_list: list[Args] = [
     Args(5), 
-    Args(5.6), 
     Args("Sample"), 
-    Args("Sample\nSample"), 
     Args("ねこ"), 
     Args([1, 2, 3]), 
 ]
 for args in args_list:
     result: bool = ascii(*args.args, **args.kwargs)
-    print("ascii({:>15}): {:<5} (type: {})".format(repr(args), str(result), type(result)))
+    print("ascii({:>20}): {:<15} (type: {})".format(repr(args), str(result), type(result)))
 
 print("\n{}\n".format("=" * 15))
 
@@ -266,7 +256,7 @@ print("\n{}\n".format("=" * 15))
 
 args_list: list[Args] = [
     Args([("one", 1), ("two", 2)]), 
-    Args({"one": 1, "two": 2}), 
+    Args(one=1, two=2), 
 ]
 for args in args_list:
     result: dict[str, int] = dict(*args.args, **args.kwargs)
@@ -355,7 +345,6 @@ print("\n{}\n".format("=" * 15))
 
 args_list: list[Args] = [
     Args(lambda x: x % 2 == 0, [1, 2, 3, 4, 5]), 
-    Args(lambda x: x % 2 == 0, (1, 2, 3, 4, 5)), 
     Args(None, [0, 1, 0, 2, 3])
 ]
 for args in args_list:
@@ -573,7 +562,7 @@ print("\n{}\n".format("=" * 15))
 
 args_list: list[Args] = [
     Args(abs, [1, -2, 3, -4]), 
-    Args(lambda x: x % 2 == 0, [1, 2, 3, 4, 5, 6, 7]), 
+    Args(lambda x: x % 2, [1, 2, 3, 4, 5, 6, 7]), 
     Args(max, [1, 2, 3, 4, 5, 6], [6, 5, 4, 3, 2, 1])
 ]
 for args in args_list:
@@ -597,7 +586,7 @@ for args in args_list:
     try:
         result = max(*args.args, **args.kwargs)
     except ValueError as e:
-        result = e
+        result = "ValueError: {}".format(e)
     print("max({:>50}): {:<30} (type: {})".format(repr(args), str(result), type(result)))
 
 print("\n{}\n".format("=" * 15))
@@ -618,7 +607,7 @@ for args in args_list:
     try:
         result = min(*args.args, **args.kwargs)
     except ValueError as e:
-        result = e
+        result = "ValueError: {}".format(e)
     print("min({:>50}): {:<30} (type: {})".format(repr(args), str(result), type(result)))
 
 print("\n{}\n".format("=" * 15))
@@ -634,7 +623,7 @@ for args in args_list:
     try:
         result = next(*args.args, **args.kwargs)
     except StopIteration as e:
-        result = e
+        result = "StopIteration: {}".format(e)
     print("next({:>40}): {:<10} (type: {})".format(repr(args), str(result), type(result)))
 
 print("\n{}\n".format("=" * 15))
@@ -661,7 +650,7 @@ print("\n{}\n".format("=" * 15))
 
 args_list: list[Args] = [
     Args("a"), 
-    Args("あ")
+    Args("ね")
 ]
 for args in args_list:
     result: int = ord(*args.args, **args.kwargs)
@@ -853,12 +842,11 @@ print("\n{}\n".format("=" * 15))
 
 args_list: list[Args] = [
     Args([1, 2, 3]), 
-    Args(map(abs, [1, -2, 3, -4])), 
     Args([1, 2, 3], start=10)
 ]
 for args in args_list:
     result: int = sum(*args.args, **args.kwargs)
-    print("sum({:>35}): {:<5} (type: {})".format(repr(args), str(result), type(result)))
+    print("sum({:>25}): {:<5} (type: {})".format(repr(args), str(result), type(result)))
 
 print("\n{}\n".format("=" * 15))
 
@@ -920,12 +908,18 @@ print("\n{}\n".format("=" * 15))
 
 args_list: list[Args] = [
     Args([1, 2, 3], [2, 3, 4]), 
-    Args([1, 2, 3], [2, 3, 4], [3, 4, 5])
+    Args([1, 2, 3], [2, 3, 4, 5]), 
+    Args([1, 2, 3], [2, 3, 4], [3, 4, 5]), 
+    Args([1, 2, 3], [2, 3, 4], strict=True), 
+    Args([1, 2, 3], [2, 3, 4, 5], strict=True)
 ]
 for args in args_list:
     result = zip(*args.args, **args.kwargs)
     print("zip({:>40}): {:<40} (type: {})".format(repr(args), str(result), type(result)))
     if hasattr(result, "__next__"):
         print("The return is iterator.")
-        for i in result:
-            print("item: {:>5}".format(repr(i)))
+        try:
+            for i in result:
+                print("item: {:>5}".format(repr(i)))
+        except ValueError as e:
+            print("ValueError: {}".format(e))
